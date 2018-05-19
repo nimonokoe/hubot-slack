@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  hubot:
+    build: .
+    environment:
+    - HUBOT_SLACK_TOKEN=${HUBOT_SLACK_TOKEN}
+    - HUBOT_NAME=${HUBOT_NAME}
+    volumes:
+    - ./scripts:/home/hubot/scripts
+    restart: always
+    # network_mode: host
+    # privileged: true

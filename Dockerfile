@@ -13,6 +13,9 @@ RUN useradd hubot -m
 
 RUN npm install -g hubot coffee-script yo generator-hubot
 
+RUN apt-get update &&\
+	apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev
+
 USER hubot
 
 WORKDIR /home/hubot
